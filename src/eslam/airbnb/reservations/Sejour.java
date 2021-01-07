@@ -5,7 +5,7 @@ import eslam.airbnb.outils.Utile;
 
 import java.util.Date;
 
-public class Sejour implements SejourInterface {
+public abstract class Sejour implements SejourInterface {
 
     private Date dateArrivee;
     private int nbNuits;
@@ -67,13 +67,14 @@ public class Sejour implements SejourInterface {
 
         if (verifyDate || verifyDays || verifyVoyageur){
             String error = "";
-            switch (boolean){
-                case verifyDate:
-                    error += "There's a problem with the arriving date ";
-                case verifyDays:
-                    error += "  the maximum days can't be more than a month you should choose a number between 1 and 31. ";
-                case verifyVoyageur:
-                    error += " the place can't hold that much of people. ";
+            if (true == verifyDate) {
+                error += "There's a problem with the arriving date " ;
+
+            } else if (true == verifyDays) {
+                error += "  the maximum days can't be more than a month you should choose a number between 1 and 31. ";
+
+            } else if (true == verifyVoyageur) {
+                error += " the place can't hold that much of people. ";
             }
             System.out.println("========================================");
             System.out.println("Error : " + error);
