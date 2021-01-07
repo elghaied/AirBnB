@@ -11,21 +11,15 @@ public class SejourLong extends Sejour implements ConditionsTarifairesInterface{
     int promotion;
 
 
-    public SejourLong(Date dateArrivee, int nbNuits, Logement logement, int nbVoyageurs,int promotion) {
+    public SejourLong(Date dateArrivee, int nbNuits, Logement logement, int nbVoyageurs,int PROMOTION_EN_POURCENTAGE) {
         super(dateArrivee, nbNuits, logement, nbVoyageurs);
-        setPromotion(promotion);
-
-
-    }
-    public void setPromotion(int promotion) {
-        this.promotion = promotion;
-    }
-
-
-    public void setPROMOTION_EN_POURCENTAGE(int PROMOTION_EN_POURCENTAGE) {
-
         this.PROMOTION_EN_POURCENTAGE = PROMOTION_EN_POURCENTAGE;
+        this.promotion = (PROMOTION_EN_POURCENTAGE/100) * tarifTotal;
+
     }
+
+
+
 
     @Override
     public boolean beneficiePromotion() {
@@ -41,6 +35,7 @@ public class SejourLong extends Sejour implements ConditionsTarifairesInterface{
     public void afficher() {
         super.afficher();
 
-        System.out.println("le tarif est : " + this.tarifTotal +  " ( " + promotion + " euros de promotion )");
+        System.out.println("le tarif est : " + this.tarifTotal +  " ( " + this.promotion + " euros de promotion, eco " + this.PROMOTION_EN_POURCENTAGE + "% "  +"  )");
+
     }
 }
