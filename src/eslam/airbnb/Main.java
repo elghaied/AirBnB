@@ -50,4 +50,17 @@ public class Main {
         reservation.afficher();
 
     }
+    /**
+     * output
+     *
+     * Jean Mi  ( 24 ).
+     *  qui a fait une réservation chez Eslam Elghaied  ( 28 ).
+     * he'll replay on : 24
+     * Le logement est situe 1 allee de la belle fille
+     * Superficie : 60m2
+     * Piscine : Oui
+     * Jardin : Oui (200m2)
+     * la date d'arrivee : 31/07/2021, pour 20 nuits.
+     * le tarif est : 1780 ( 356 euros de promotion, eco 20% 1424  )
+     */
 }
