@@ -1,5 +1,6 @@
 package eslam.airbnb.logements;
 
+import eslam.airbnb.outils.Msquare;
 import eslam.airbnb.utilisateurs.Hote;
 
 public class Maison extends Logement{
@@ -20,7 +21,7 @@ public class Maison extends Logement{
         }
 
     if(superficieJardin != 0){
-        System.out.println("Jardin : Oui (" + this.superficieJardin + ")");
+        System.out.println("Jardin : Oui (" + Msquare.sq(this.superficieJardin ) + ")");
 
     }else
         System.out.println("Jardin : Non");

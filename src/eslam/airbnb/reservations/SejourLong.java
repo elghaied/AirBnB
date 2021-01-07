@@ -9,7 +9,7 @@ public class SejourLong extends Sejour implements ConditionsTarifairesInterface{
     int promotion;
     int tarif;
 
-    public SejourLong(Date dateArrivee, int nbNuits, Logement logement, int nbVoyageurs) {
+    public SejourLong(Date dateArrivee, int nbNuits, Logement logement, int nbVoyageurs,int promotion,int tarif) {
         super(dateArrivee, nbNuits, logement, nbVoyageurs);
     }
 

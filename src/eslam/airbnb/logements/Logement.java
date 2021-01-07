@@ -1,5 +1,6 @@
 package eslam.airbnb.logements;
 
+import eslam.airbnb.outils.Msquare;
 import eslam.airbnb.utilisateurs.Hote;
 
 
@@ -81,7 +82,7 @@ public abstract class Logement {
 
         hote.afficher();
         System.out.println("Le logement est situe " + this.adresse );
-        System.out.println("Superficie : " + this.superficie + "m2");
+        System.out.println("Superficie : " + Msquare.sq(this.superficie));
     }
 
 }

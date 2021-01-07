@@ -6,6 +6,8 @@ import eslam.airbnb.logements.Maison;
 import eslam.airbnb.outils.Utile;
 import eslam.airbnb.reservations.Reservation;
 import eslam.airbnb.reservations.Sejour;
+import eslam.airbnb.reservations.SejourCourt;
+import eslam.airbnb.reservations.SejourLong;
 import eslam.airbnb.utilisateurs.Hote;
 import eslam.airbnb.utilisateurs.Personne;
 import eslam.airbnb.utilisateurs.Voyageurs;
@@ -29,15 +31,23 @@ public class Main {
 
         // ----------------------------------------------------
         // Critère de séjour
-        Date dateArrivee = Utile.stringToDate("07/31/2020");
+        Date dateArrivee = Utile.stringToDate("07/31/2021");
         int nbNuits = 20;
         int nbVoyageurs = 2;
+        int promotion = 20;
         Maison logement = logement2;
+        Sejour sejour;
+        if(nbNuits > 6) {
+            sejour = new SejourLong(dateArrivee, nbNuits, logement, nbVoyageurs,promotion,logement.getTarifParNuit());
 
-        Sejour sejour = new Sejour(dateArrivee, nbNuits, logement, nbVoyageurs);
+
+        }else {
+             sejour = new SejourCourt(dateArrivee, nbNuits, logement, nbVoyageurs,logement.getTarifParNuit());
+        }
+
+
         Reservation reservation = new Reservation(0, sejour, personne3);
         reservation.afficher();
-
 
     }
 }

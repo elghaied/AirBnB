@@ -80,9 +80,8 @@ public abstract class Sejour implements SejourInterface {
             System.out.println("Error : " + error);
         }else {
             logement.afficher();
-            System.out.println("la date d'arrivee : " + Utile.dateToString(dateArrivee));
-            int tarif = nbNuits * logement.getTarifParNuit();
-            System.out.println("le tarif est : " + tarif + " euro ");
+            System.out.println("la date d'arrivee : " + Utile.dateToString(dateArrivee) + ", pour " + this.nbNuits + " nuits.");
+
         }
 
 
