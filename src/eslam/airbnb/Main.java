@@ -38,11 +38,11 @@ public class Main {
         Maison logement = logement2;
         Sejour sejour;
         if(nbNuits > 6) {
-            sejour = new SejourLong(dateArrivee, nbNuits, logement, nbVoyageurs,promotion,logement.getTarifParNuit());
+            sejour = new SejourLong(dateArrivee, nbNuits, logement, nbVoyageurs,promotion);
 
 
         }else {
-             sejour = new SejourCourt(dateArrivee, nbNuits, logement, nbVoyageurs,logement.getTarifParNuit());
+             sejour = new SejourCourt(dateArrivee, nbNuits, logement, nbVoyageurs);
         }
 
 

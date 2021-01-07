@@ -9,8 +9,8 @@ public class SejourCourt extends Sejour {
 
 
 
-    public SejourCourt(Date dateArrivee, int nbNuits, Logement logement, int nbVoyageurs, int tarif) {
-        super(dateArrivee, nbNuits, logement, nbVoyageurs,tarif);
+    public SejourCourt(Date dateArrivee, int nbNuits, Logement logement, int nbVoyageurs) {
+        super(dateArrivee, nbNuits, logement, nbVoyageurs);
 
     }
 
@@ -18,7 +18,6 @@ public class SejourCourt extends Sejour {
     @Override
     public void afficher() {
         super.afficher();
-//        int tarif = nbNuits * logement.getTarifParNuit();
-        System.out.println("le tarif est : " + this.tarif + " euro ");
+        System.out.println("le tarif est : " + this.tarifTotal + " euro ");
     }
 }

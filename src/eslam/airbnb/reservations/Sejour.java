@@ -11,14 +11,15 @@ public abstract class Sejour implements SejourInterface {
     private int nbNuits;
     private Logement logement;
     private int nbVouageurs;
-    protected int tarif;
 
-    public Sejour(Date dateArrivee, int nbNuits, Logement logement, int nbVoyageurs,int tarif){
+    protected int tarifTotal;
+
+    public Sejour(Date dateArrivee, int nbNuits, Logement logement, int nbVoyageurs){
         this.dateArrivee = dateArrivee;
         this.logement = logement;
         this.nbNuits = nbNuits;
         this.nbVouageurs = nbVoyageurs;
-        this.tarif =  tarif;
+        this.tarifTotal = logement.getTarifParNuit() * nbNuits;
     }
 
     public  boolean verficationDateArrivee(){
